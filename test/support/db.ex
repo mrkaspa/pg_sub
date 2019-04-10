@@ -38,6 +38,7 @@ defmodule Test.DB do
           'evt_test',
           json_build_object(
             'operation', TG_OP,
+            'table', TG_TABLE_NAME::regclass::text,
             'record', row_to_json(NEW)
           )::text
         );

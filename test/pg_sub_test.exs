@@ -19,7 +19,11 @@ defmodule PgSubTest do
 
       receive do
         {:data, data} ->
-          assert %{operation: "INSERT", record: %{email: "demo", id: 1, pass: "demo00"}} = data
+          assert %{
+                   operation: "INSERT",
+                   table: "users",
+                   record: %{email: "demo", id: 1, pass: "demo00"}
+                 } = data
       end
     end
   end
